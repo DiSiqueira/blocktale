@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  blocktale:
+    build: ./docker/go/
+    volumes:
+      - .:/go/src/github.com/disiqueira/blocktale
+    environment:
+      DEBUG: 'true'
+      LOG_LEVEL: 'debug'
+      DB_DSN: 'postgres://blocktale:blocktale@postgres/blocktale?client_encoding=UTF8'
+    ports:
+      - 8000:80
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+  postgres:
+    build: ./docker/postgres/
+    ports:
+      - 5432:5432
+    environment:
+      LC_ALL: C.UTF-8
+      POSTGRES_DB: blocktale
+      POSTGRES_USER: blocktale
+      POSTGRES_PASSWORD: blocktale

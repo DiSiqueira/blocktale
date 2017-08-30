@@ -1,0 +1,16 @@
+hash: 8c883b61236f4cffdd055418b7d2a512bbfacb3cee496b69988ec458c6931cb0
+updated: 2017-08-24T23:08:07.446674468+02:00
+imports:
+- name: github.com/go-chi/chi
+  version: ba73ba0623af32e4e5f09880177e73bd78d98852
+  subpackages:
+  - middleware
+- name: github.com/go-gorp/gorp
+  version: 4deece61034873cb5b5416e81abe4cea7bd0da72
+- name: github.com/go-sql-driver/mysql
+  version: a0583e0143b1624142adab07e0e97fe106d99561
+- name: github.com/makarski/mybanana
+  version: 37cb2a04932782708ace5b83cf0b499f44e65db4
+  subpackages:
+  - db/banana
+testImports: []
